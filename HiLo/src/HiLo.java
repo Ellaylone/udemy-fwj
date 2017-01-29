@@ -12,11 +12,13 @@ public class HiLo {
         do {
             int theNumber = (int)(Math.random() * 100 + 1);
             int guess = 0;
+            int attempts = 0;
 
             while (guess != theNumber) {
                 System.out.println("Guess a number between 1 and 100:");
 
                 guess = scan.nextInt();
+                attempts++;
 
                 if (guess < theNumber) {
                     System.out.println(guess + " is too low");
@@ -24,6 +26,7 @@ public class HiLo {
                     System.out.println(guess + " is too high");
                 } else {
                     System.out.println(guess + " is the correct number!");
+                    System.out.println("You did it in " + attempts + " attempts");
                 }
             }
 
